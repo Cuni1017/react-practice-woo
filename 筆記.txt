@@ -1,0 +1,17 @@
+https://woocommerce.github.io/woocommerce-rest-api-docs/?javascript#list-all-products
+
+// Install:
+// npm install --save @woocommerce/woocommerce-rest-api
+
+// Setup:
+const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
+// import WooCommerceRestApi from "@woocommerce/woocommerce-rest-api"; // Supports ESM
+
+const WooCommerce = new WooCommerceRestApi({
+  url: 'http://example.com', // Your store URL
+  consumerKey: 'consumer_key', // Your consumer key
+  consumerSecret: 'consumer_secret', // Your consumer secret
+  version: 'wc/v3' // WooCommerce WP REST API version
+});
+
+webpack在node_modules裡面的react-script.config資料夾裡

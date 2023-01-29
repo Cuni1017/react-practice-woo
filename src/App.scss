@@ -1,0 +1,92 @@
+@import "~@material/react-top-app-bar/dist/top-app-bar.css";
+@import "~@material/react-material-icon/dist/material-icon.css";
+@import "~@material/react-drawer/dist/drawer.css";
+@import "~@material/react-list/dist/list.css";
+@import "~@material/react-button/dist/button.css";
+@import "~@material/react-layout-grid/dist/layout-grid.css";
+@import "~@material/react-card/dist/card.css";
+@import "~@material/react-list/dist/list.css";
+@import "~@material/react-menu-surface/dist/menu-surface.css";
+@import "~@material/react-menu/dist/menu.css";
+@import "~@material/react-select/dist/select.css";
+@import "~@material/react-chips/dist/chips.css";
+@import "~@material/react-ripple/dist/ripple.css";
+@import "~@material/react-text-field/index.scss";
+@import "~@material/react-typography/dist/typography.css";
+@import "~@material/react-radio/dist/radio.css";
+@import "~@material/react-checkbox/dist/checkbox.css";
+@import "~@material/react-ripple/dist/ripple.css";
+
+a {
+  text-decoration: none;
+}
+.productCard {
+  .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #1c1c1c;
+  }
+  .description {
+    line-height: 1.2rem;
+    height: 4.8rem;
+    overflow-y: hidden;
+    color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.mdc-top-app-bar__title {
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+.mdc-list {
+  a {
+    text-decoration: none;
+    .mdc-list-item {
+      color: #6200ee;
+    }
+  }
+}
+// .mdc-list-item.mdc-ripple-upgrated {
+//   width: 100%;
+// }
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
