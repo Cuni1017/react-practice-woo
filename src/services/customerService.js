@@ -22,6 +22,10 @@ class CustomerService {
     console.log(this.customerStorage);
   }
 
+  get i() {
+    return "i";
+  }
+
   // getCustomerStorage = () => JSON.parse(Cookies.get(CUSTOMER_KEY));
 
   clearCustomerStorage = () => {
@@ -35,6 +39,7 @@ class CustomerService {
     Cookies.set(CUSTOMER_KEY, JSON.stringify(this.customerStorage), {
       expires: 7,
     });
+    // this.customerStorage = {};
   };
 
   setCustomerIdToCookie = (customerId) => {
@@ -77,9 +82,7 @@ class CustomerService {
       .then((response) => {
         console.log(response);
         if (response.data.length > 0) {
-          console.log("here");
           const customer = new Customer(response.data[0]);
-          console.log(customer);
           this.setCustomerIdToCookie(customer.id);
           return customer;
         } else {
@@ -116,7 +119,7 @@ class CustomerService {
   setShouldBackToCheckout = () => {
     console.log(this.isLoggedIn, "this.isLoggedIn");
     console.log(this.customerStorage, "this.customerStorage");
-    alert(1);
+    alert("let me see see");
     this.customerStorage["setShouldBackToCheckout"] = true;
     this.saveToCustomerStorage();
   };
@@ -127,9 +130,9 @@ class CustomerService {
   };
 
   get shouldBackToCheckout() {
-    // 兩個驚嘆號把null或undefined轉成false
     // console.log(this.customerStorage["setShouldBackToCheckout"], "123");
     // console.log(!!this.customerStorage["setShouldBackToCheckout"], "456");
+    // 兩個驚嘆號把null或undefined轉成false
     return !!this.customerStorage["setShouldBackToCheckout"];
   }
 }

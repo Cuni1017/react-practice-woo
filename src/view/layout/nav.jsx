@@ -49,6 +49,7 @@ const Nav = () => {
               <Link
                 to="/logout"
                 onClick={() => {
+                  console.log(customerService.i);
                   customerService.logOut();
                   setIsLogIn(false);
                 }}

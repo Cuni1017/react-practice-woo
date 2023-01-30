@@ -95,36 +95,35 @@ const CheckoutPage = () => {
     //   // 如果尚未登入就進來結帳頁面，轉到登入頁面
     checkUserIsLogin();
 
-    // const loadAssets = async () => {
-    //   const [paymentGateways, shippingZones] = await Promise.all([
-    //     orderService.getPaymentGatways(),
-    //     orderService.getShippingZones(),
-    //   ]);
-    //   //     // const paymentGateways = await orderService.getPaymentGatways();
-    //   //     // const shippingZones = await orderService.getShippingZones();
-    //   const shippingZoneMethods = await orderService.getShippingZoneMethods(
-    //     shippingZones[1] //只取台灣
-    //   );
-    //   setCheckoutAssets({
-    //     ...checkoutAssets,
-    //     paymentGateways: paymentGateways,
-    //     shippingZoneMethods: shippingZoneMethods,
-    //   });
-    // };
+    const loadAssets = async () => {
+      const [paymentGateways, shippingZones] = await Promise.all([
+        orderService.getPaymentGatways(),
+        orderService.getShippingZones(),
+      ]);
+      //     // const paymentGateways = await orderService.getPaymentGatways();
+      //     // const shippingZones = await orderService.getShippingZones();
+      const shippingZoneMethods = await orderService.getShippingZoneMethods(
+        shippingZones[1] //只取台灣
+      );
+      setCheckoutAssets({
+        ...checkoutAssets,
+        paymentGateways: paymentGateways,
+        shippingZoneMethods: shippingZoneMethods,
+      });
+    };
 
-    // loadAssets();
+    loadAssets();
   }, []);
 
   const [isLogIn, setIsLogIn] = useContext(IsLogInContext);
-  // // 避免在React StrictMode 重複兩次alert的flag
+  // 避免在React StrictMode 重複兩次alert的flag
   let flag = 0;
-
   const checkUserIsLogin = () => {
     if (!isLogIn) {
       if (flag === 0) alert("結帳前請先登入");
       flag += 1;
-      customerService.setShouldBackToCheckout();
-      // window.location.replace("/login");
+      customerService.setShouldBackToCheckout(); //!有問題
+      window.location.replace("/login");
     }
   };
 
